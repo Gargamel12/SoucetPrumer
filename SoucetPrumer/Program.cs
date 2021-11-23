@@ -20,12 +20,21 @@ namespace SoucetPrumer
                     Console.WriteLine(text);
                     text = "";
                 }
-                else if (keyInfo.Key == ConsoleKey.Backspace)
+                else if (keyInfo.Key == ConsoleKey.Backspace && text.Length > 0) 
+
                 {
                     //Když uživatel zmáčkne backspace
+                    //přepíšu řádek mezerma, počet podle délky textu
+                    Console.SetCursorPosition(0, 0);
+                    Console.Write(new string(' ',text.Length));
+                    
+                    //zkrátím text
+                    
                     text = text.Substring(0,text.Length-1);
+                    //napíšu zkrácený text
                     Console.SetCursorPosition(0, 0);
                     Console.Write(text);
+
                 }
                 else if (LeCisla.Contains(keyInfo.KeyChar))
                 {
