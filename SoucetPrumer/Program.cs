@@ -8,19 +8,25 @@ namespace SoucetPrumer
         static void Main(string[] args)
         {
             ConsoleKeyInfo keyInfo;
-
+            string LeCisla = "0123456789";
             do
             {
-                keyInfo = Console.ReadKey(false); //Zachycení stisknuté klávesy
-                if (keyInfo.Key == ConsoleKey.Enter) 
-                { 
-                    //když uživatel zmáčkne Enter
-                }
-                else if (keyInfo.Key == ConsoleKey.Backspace) 
+                keyInfo = Console.ReadKey(true); //Zachycení stisknuté klávesy
+                if (keyInfo.Key == ConsoleKey.Enter)
                 {
+                    //když uživatel zmáčkne Enter
+                    Console.WriteLine();
+                }
+                else if (keyInfo.Key == ConsoleKey.Backspace)
+                {
+                    //Když uživatel zmáčkne backspace
 
                 }
-                Console.WriteLine(keyInfo.KeyChar);
+                else if (LeCisla.Contains(keyInfo.KeyChar))
+                {
+                    //Když uživatel napsal číslici
+                    Console.Write(keyInfo.KeyChar);
+                }
             } while (keyInfo.Key != ConsoleKey.Escape);
 
         }
